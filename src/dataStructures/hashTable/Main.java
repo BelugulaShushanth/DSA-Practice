@@ -1,6 +1,8 @@
 package dataStructures.hashTable;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -21,6 +23,10 @@ public class Main {
 
         System.out.println(hashTable.keys());
 
+        int x = 10;
+        int[] arr = {x};
+
+        List<Integer> temp = new ArrayList<>();
 
     }
 }
