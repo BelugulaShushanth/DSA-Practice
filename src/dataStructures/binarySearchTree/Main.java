@@ -16,5 +16,7 @@ public class Main {
 
         System.out.println("Contains: "+bst.contains(21));
 
+        System.out.printf("RContains: "+bst.rContains(231));
+
     }
 }
