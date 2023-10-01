@@ -1,5 +1,7 @@
 package dataStructures.binarySearchTree;
 
+import java.util.*;
+
 public class BinarySearchTree {
 
     private Node root;
@@ -121,6 +123,78 @@ public class BinarySearchTree {
             currentNode = currentNode.left;
         }
         return currentNode.value;
+    }
+
+    public List<Integer> BFS(){
+        Queue<Node> queue = new LinkedList<>();
+        List<Integer> result = new ArrayList<>();
+        Node currentNode = root;
+        queue.add(currentNode);
+        while (!queue.isEmpty()){
+            currentNode = queue.remove();
+            result.add(currentNode.value);
+            if (currentNode.left != null){
+                queue.add(currentNode.left);
+            }
+            if(currentNode.right != null){
+                queue.add(currentNode.right);
+            }
+        }
+        return result;
+    }
+
+    public List<Integer> preOrderDFS(){
+        List<Integer> result = new ArrayList<>();
+        preOrderTraverse(result, root);
+        return result;
+    }
+
+    private void preOrderTraverse(List<Integer> result, Node currentNode) {
+        result.add(currentNode.value);
+        if (currentNode.left != null){
+            preOrderTraverse(result, currentNode.left);
+        }
+        if (currentNode.right != null){
+            preOrderTraverse(result,currentNode.right);
+        }
+    }
+
+    public List<Integer> postOrderDFS(){
+        List<Integer> result = new ArrayList<>();
+        postOrderTraverse(result, root);
+        return result;
+    }
+
+    private void postOrderTraverse(List<Integer> result, Node currentNode) {
+        if (currentNode.left != null){
+            postOrderTraverse(result, currentNode.left);
+        }
+        if (currentNode.right != null){
+            postOrderTraverse(result,currentNode.right);
+        }
+        result.add(currentNode.value);
+    }
+
+    public List<Integer> inOrderDFS(){
+        List<Integer> result = new ArrayList<>();
+        inOrderTraverse(result, root);
+        return result;
+    }
+
+    private void inOrderTraverse(List<Integer> result, Node currentNode) {
+        if (currentNode.left != null){
+            inOrderTraverse(result, currentNode.left);
+        }
+        result.add(currentNode.value);
+        if (currentNode.right != null){
+            inOrderTraverse(result,currentNode.right);
+        }
+    }
+
+    public List<Integer> inOrderDFSSimple(){
+        List<Integer> list = preOrderDFS();
+        Collections.sort(list);
+        return list;
     }
 
 }

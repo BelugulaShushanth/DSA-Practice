@@ -1,5 +1,7 @@
 package dataStructures.binarySearchTree;
 
+import java.util.Collections;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,7 +18,12 @@ public class Main {
 
         System.out.println("Contains: "+bst.contains(21));
 
-        System.out.printf("RContains: "+bst.rContains(231));
+        System.out.println("RContains: "+bst.rContains(231));
 
+        System.out.println("BFS: "+bst.BFS());
+        System.out.println("Pre Order DFS: "+bst.preOrderDFS());
+        System.out.println("Post Order DFS: "+bst.postOrderDFS());
+        System.out.println("In Order DFS: "+bst.inOrderDFS());
+        System.out.println("In Order DFS Simple: "+bst.inOrderDFS());
     }
 }
