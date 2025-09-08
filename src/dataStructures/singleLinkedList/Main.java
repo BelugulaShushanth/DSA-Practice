@@ -26,7 +26,7 @@ public class Main {
         linkedList.printList();
         System.out.println("Remove : "+linkedList.remove(2,2).value);
         linkedList.printList();
-        linkedList.reverse();
+        linkedList.reverseV2();
         System.out.println("Reverse");
         linkedList.printList();
     }

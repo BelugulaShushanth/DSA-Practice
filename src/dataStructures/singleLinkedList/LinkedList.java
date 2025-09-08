@@ -169,6 +169,20 @@ public class LinkedList {
         }
     }
 
+    public void reverseV2(){
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        while (temp != null){
+            after = temp.next;
+            temp.next = before;
+            before = temp;
+            temp = after;
+        }
+    }
+
     public void partitionList(int x){
         if(head != null) {
             Node dummy1 = new Node(0);

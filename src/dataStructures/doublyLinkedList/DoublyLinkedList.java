@@ -202,7 +202,6 @@ public class DoublyLinkedList {
             Node temp = head;
             head = tail;
             tail = temp;
-            temp = tail;
             Node before = null;
             Node after;
 

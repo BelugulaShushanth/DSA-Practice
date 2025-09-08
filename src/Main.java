@@ -1,3 +1,5 @@
+import recursion.Factorial;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +22,8 @@ public class Main {
 
         a = "";
 
-        System.out.println(a+"  "+a.hashCode());
-        System.out.println(b+"  "+b.hashCode());
+        //System.out.println(a+"  "+a.hashCode());
+       // System.out.println(b+"  "+b.hashCode());
+        System.out.println(new Factorial().findFactorial(5));
     }
 }
